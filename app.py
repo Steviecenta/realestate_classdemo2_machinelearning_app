@@ -1,7 +1,9 @@
 import joblib
 import pandas as pd
 import streamlit as st
-
+import sys
+import streamlit as st
+# ... other imports ...
 # Copy the rest of your app.py code here
 
 # ==============================================================================
@@ -21,6 +23,7 @@ def handle_ames_missing_values(df):
 # MAP TO __main__ SCOPE (Failsafe for joblib pickling references):
 # If joblib saved the function under the notebook's __main__ scope, this line
 # allows joblib to find it during unpickling inside app.py.
+sys.modules
 sys.modules["__main__"].handle_ames_missing_values = handle_ames_missing_values
 
 
