@@ -18,14 +18,20 @@ def handle_ames_missing_values(df):
     df = df.copy()
     # Your missing value handling logic here...
     return df
-
+# Ensure handle_ames_missing_values is defined or imported before line 24
+def handle_ames_missing_values(df):
+  # ... your function logic ...
+    return df
 
 # MAP TO __main__ SCOPE (Failsafe for joblib pickling references):
 # If joblib saved the function under the notebook's __main__ scope, this line
 # allows joblib to find it during unpickling inside app.py.
-sys.modules
-sys.modules["__main__"].handle_ames_missing_values = handle_ames_missing_values
 
+
+
+  
+# Line 24
+sys.modules["__main__"].handle_ames_missing_values = handle_ames_missing_values
 
 # ==============================================================================
 # 2. CACHED ARTIFACT LOADING
